@@ -60,6 +60,6 @@ jobs:
         script: |
           sudo docker-compose stop
           sudo docker-compose rm web
-          sudo docker pull yambi2:v13.10
+          sudo docker pull vanoid/yambi2:v13.10
           sudo docker-compose up -d 
 
