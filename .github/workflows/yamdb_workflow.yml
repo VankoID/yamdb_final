@@ -60,6 +60,5 @@ jobs:
         script: |
           # Выполняет pull образа с DockerHub
           sudo docker pull vanoid/yambi2:latest
-          #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker-compose up -d
