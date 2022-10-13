@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip3 install -r ./requirements.txt --no-cache-dir
+RUN pip3 install -r requirements.txt --no-cache-dir
 
-CMD ["sh", "run.sh"]
+CMD CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]
 
 LABEL author='vanoid_relax@yandex.ru' version=1 
