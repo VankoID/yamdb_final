@@ -50,4 +50,5 @@ docker-compose down -v
 
 Ivan Dudarev
 
-https://github.com/VankoID/yamdb_final/actions/workflows/yamdb_workflow/badge.svg
+![Django-app workflow](https://github.com/VankoID/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
