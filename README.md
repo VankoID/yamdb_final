@@ -49,3 +49,5 @@ docker-compose down -v
 ### Автор проекта
 
 Ivan Dudarev
+
+https://github.com/VankoID/yamdb_final/actions/workflows/yamdb_workflow/badge.svg
