@@ -58,8 +58,5 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker-compose stop
-          sudo docker-compose rm web
-          sudo docker pull vanoid/yambi2:v13.10
-          sudo docker-compose up -d 
-
+          sudo docker stop $(sudo docker ps -a -q)
+          sudo docker-compose up --build -d
