@@ -9,8 +9,7 @@ services:
       - ./.env
 
   web:
-    build:
-      context: ../api_yamdb
+    image: vanoid/yambi2:v13.10
     restart: always
     volumes:
       - static_value:/app/static/
