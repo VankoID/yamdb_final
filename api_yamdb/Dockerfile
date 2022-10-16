@@ -10,4 +10,4 @@ COPY ./ .
 
 CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000"]
 
-LABEL author='vanoid_relax@yandex.ru' version=20
+LABEL author='vanoid_relax@yandex.ru' version=22
