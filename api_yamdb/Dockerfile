@@ -2,10 +2,12 @@ FROM python:3.7-slim
 
 WORKDIR /app
 
-COPY . .
+COPY requirements.txt .
 
-RUN pip3 install -r api_yamdb/requirements.txt --no-cache-dir
+RUN pip3 install -r requirements.txt --no-cache-dir
 
-CMD ["sh", "run.sh"]
+COPY ./ .
 
-LABEL author='vanoid_relax@yandex.ru' version=2
+CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000"]
+
+LABEL author='vanoid_relax@yandex.ru' version=3
