@@ -19,12 +19,10 @@ jobs:
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
         cd api_yamdb/
         pip install -r requirements.txt
-
     - name: Test with flake8 and django tests
       run: |
         python -m flake8
         pytest
-
   build_and_push_to_docker_hub:
       name: Push Docker image to Docker Hub
       runs-on: ubuntu-latest
@@ -44,7 +42,7 @@ jobs:
           with:
             push: true
             context: ./api_yamdb
-            tags: fursy/api_yamdb:latest
+            tags: vanoid/yamdb3:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -68,8 +66,7 @@ jobs:
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-          sudo docker compose up -d
-
+          sudo docker-compose up -d
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
@@ -79,4 +76,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.workflow }} успешно выполнен!!!
+        message: ${{ github.workflow }} успешно выполнен!
