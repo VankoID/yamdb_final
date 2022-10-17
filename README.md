@@ -54,5 +54,9 @@ docker-compose down -v
 
 Ivan Dudarev
 
+### Ссылка на проект
+
+http://51.250.18.154/admin/login/?next=/admin/
+
 ![Django-app workflow](https://github.com/VankoID/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
